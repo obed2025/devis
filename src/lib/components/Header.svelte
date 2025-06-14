@@ -5,7 +5,14 @@
 
 <header class="container">
 	<h1>
-		<a href="/" translate="no">Devis</a>
+		<a
+			href="/"
+			translate="no"
+			onclick={(e) => {
+				e.preventDefault();
+				document.location = '/';
+			}}>Devis</a
+		>
 	</h1>
 
 	<nav>

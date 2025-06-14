@@ -8,7 +8,7 @@
 	function ondelete() {
 		if (confirm('Do you really want to delete this estimation!\nThis action is irreversible.')) {
 			del(+page.params.id);
-			goto('../');
+			document.location = '../';
 		}
 	}
 </script>
