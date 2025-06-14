@@ -2,13 +2,29 @@
 	import type { PageProps } from './$types';
 	import cartEmpty from '$lib/assets/cart-empty.gif';
 	import type { Estimation } from '$lib/types';
+	import { slide } from 'svelte/transition';
 
 	const { data }: PageProps = $props();
+	let selected = $state([]);
+	let selectedEstimations = $derived(
+		selected.map((val, i) => val && data.estimations?.[i][0]).filter(Boolean)
+	);
 </script>
 
 <svelte:head>
 	<title>Devis</title>
 </svelte:head>
+
+{#if selectedEstimations.length}
+	<div class="btns" transition:slide>
+		<button class="btn">
+			<a href="/multiple?estimations={selectedEstimations.join(',')}">
+				<i class="fa-solid fa-external-link"></i>
+				<span>Open</span>
+			</a>
+		</button>
+	</div>
+{/if}
 
 {#if data.estimations === null}
 	<h3 class="loading">Loading....</h3>
@@ -19,9 +35,10 @@
 	</div>
 {:else}
 	<div class="estimations">
-		{#each data.estimations as estimation}
+		{#each data.estimations as estimation, i}
 			{@const data = estimation[1] as Estimation}
 			<div>
+				<input type="checkbox" bind:checked={selected[i]} />
 				<h2><a href="/{estimation[0]}">{data.title}</a></h2>
 				<h3>{data.scopeOfWork}</h3>
 			</div>
@@ -50,5 +67,13 @@
 	a {
 		text-decoration: none;
 		color: brown;
+	}
+
+	button {
+		--color: #3c007814;
+
+		a {
+			color: CanvasText;
+		}
 	}
 </style>

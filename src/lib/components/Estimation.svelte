@@ -4,7 +4,7 @@
 	import Expenses from './Expenses.svelte';
 
 	const { data }: { data: Estimation } = $props();
-	const { title, scopeOfWork, note } = data;
+	const { title, scopeOfWork, note, expenses, extraExpenses, currency } = data;
 </script>
 
 <h1>{title}</h1>
@@ -12,7 +12,7 @@
 <p>{note}</p>
 
 {#if estimationStore.expenses}
-	<Expenses></Expenses>
+	<Expenses {expenses} {extraExpenses} currency$={currency}></Expenses>
 {/if}
 
 <style>
