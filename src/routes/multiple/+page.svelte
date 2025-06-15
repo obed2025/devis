@@ -25,7 +25,7 @@
 {/if}
 
 <svelte:head>
-	<title>Devis - Many Estimations</title>
+	<title>Devis - Multiple Estimations</title>
 </svelte:head>
 
 {#each estimations || [] as estimation}
