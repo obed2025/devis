@@ -57,6 +57,12 @@
 			padding: 0.25rem 0.75rem;
 			border-radius: 0.35rem;
 			border: 1px solid CanvasText;
+
+			input {
+				zoom: 2;
+				accent-color: brown;
+				margin-left: 0;
+			}
 		}
 	}
 

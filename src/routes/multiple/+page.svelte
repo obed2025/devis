@@ -34,6 +34,7 @@
 	{:then data}
 		{#if data}
 			<Estimation {data}></Estimation>
+			<br />
 		{/if}
 	{/await}
 {/each}
