@@ -48,8 +48,6 @@
 				<td>{currency((expenses_.qty || 1) * (expenses_.unitCost || 0), currentCurrency)} </td>
 			</tr>
 		{/each}
-	</tbody>
-	<tfoot>
 		{#if extraExpenses?.length || estimationStore.extraExpenses?.length}
 			<tr>
 				<td colspan="2">Sub Total</td>
@@ -66,7 +64,7 @@
 			<th colspan="2">TOTAL</th>
 			<th colspan="4">{currency(grandTotal, currentCurrency)}</th>
 		</tr>
-	</tfoot>
+	</tbody>
 </table>
 
 <style>
@@ -84,8 +82,11 @@
 		padding: 0.5rem;
 	}
 
-	tfoot td,
-	tfoot th {
+	tr:has([colspan]) {
 		text-align: end;
+
+		td {
+			border: none;
+		}
 	}
 </style>
