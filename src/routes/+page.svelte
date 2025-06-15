@@ -3,12 +3,14 @@
 	import cartEmpty from '$lib/assets/cart-empty.gif';
 	import type { Estimation } from '$lib/types';
 	import { slide } from 'svelte/transition';
+	import { delMany } from 'idb-keyval';
 
 	const { data }: PageProps = $props();
-	let selected = $state([]);
+	let selected: boolean[] = $state([]);
 	let selectedEstimations = $derived(
-		selected.map((val, i) => val && data.estimations?.[i][0]).filter(Boolean)
+		selected.map((val, i) => val && data.estimations?.[i][0]).filter(Boolean) as IDBValidKey[]
 	);
+	let selectAll = $state(false);
 </script>
 
 <svelte:head>
@@ -17,6 +19,18 @@
 
 {#if selectedEstimations.length}
 	<div class="btns" transition:slide>
+		<button
+			class="btn red"
+			onclick={async () => {
+				if (confirm('Do you really want to delete them!\nThis action is irreversible.')) {
+					await delMany(selectedEstimations);
+					document.location = '/';
+				}
+			}}
+		>
+			<i class="fa-solid fa-trash"></i>
+			<span>Delete</span>
+		</button>
 		<button class="btn">
 			<a href="/multiple?estimations={selectedEstimations.join(',')}">
 				<i class="fa-solid fa-external-link"></i>
@@ -34,6 +48,16 @@
 		<p>You have no estimations yet.</p>
 	</div>
 {:else}
+	<label for="select-all">
+		<input
+			type="checkbox"
+			id="select-all"
+			bind:checked={selectAll}
+			oninput={() => (selected = selected.map((_) => !selectAll))}
+		/>
+		<span>Select all</span>
+	</label>
+
 	<div class="estimations">
 		{#each data.estimations as estimation, i}
 			{@const data = estimation[1] as Estimation}
@@ -78,8 +102,23 @@
 	button {
 		--color: #3c007814;
 
+		&.red {
+			--color: #d9b6b680;
+		}
+
 		a {
 			color: CanvasText;
+		}
+	}
+
+	label {
+		margin-bottom: 1rem;
+		display: block;
+		display: flex;
+		align-items: center;
+
+		input {
+			zoom: 1.5;
 		}
 	}
 </style>

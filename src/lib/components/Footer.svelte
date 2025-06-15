@@ -9,13 +9,14 @@
 </script>
 
 <footer class="container">
-	<p>
+	<p class="screen">
 		Copyright &copy; by {NAME}
 		{range} <br />
 		All rights reserved.
 	</p>
 
 	<p class="print">
+		Generated via
 		<a href={origin}>{origin}</a>
 	</p>
 </footer>
@@ -23,6 +24,12 @@
 <style>
 	p {
 		text-align: center;
+	}
+
+	.screen {
+		@media print {
+			display: none;
+		}
 	}
 
 	.print {
