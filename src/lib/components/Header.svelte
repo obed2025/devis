@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { Link } from '$lib/types';
 	import { MENU } from '../consts';
 </script>
@@ -15,13 +16,15 @@
 		>
 	</h1>
 
-	<nav>
-		<ul>
-			{#each MENU as link}
-				{@render ListItem(link)}
-			{/each}
-		</ul>
-	</nav>
+	{#if !page.url.toString().includes('/edit')}
+		<nav>
+			<ul>
+				{#each MENU as link}
+					{@render ListItem(link)}
+				{/each}
+			</ul>
+		</nav>
+	{/if}
 </header>
 
 {#snippet ListItem({ href, text, icon }: Link)}
