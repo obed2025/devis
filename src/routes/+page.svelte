@@ -63,8 +63,9 @@
 			{@const data = estimation[1] as Estimation}
 			<div>
 				<input type="checkbox" bind:checked={selected[i]} />
-				<h2><a href="/{estimation[0]}">{data.title}</a></h2>
+				<h2><a href="/{estimation[0]}">{data.title || 'Untitled'}</a></h2>
 				<h3>{data.scopeOfWork}</h3>
+				<span>{new Date(estimation[0] as number).toLocaleDateString()}</span>
 			</div>
 		{/each}
 	</div>
