@@ -52,7 +52,10 @@
 {:else if !data.estimations?.length}
 	<div class="empty">
 		<img src={cartEmpty} alt="Empty Box" />
-		<p>You have no estimations yet.</p>
+		<p>
+			You have no estimations yet. <br />
+			Read more <a href="/about">about</a> this project or, <a href="/new">create</a> a new estimation.
+		</p>
 	</div>
 {:else}
 	<label for="select-all">
