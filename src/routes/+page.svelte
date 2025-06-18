@@ -4,6 +4,7 @@
 	import type { Estimation } from '$lib/types';
 	import { slide } from 'svelte/transition';
 	import { delMany } from 'idb-keyval';
+	import { Modal, Content, Trigger } from 'sv-popup';
 
 	const { data }: PageProps = $props();
 	let selected: boolean[] = $state([]);
@@ -19,18 +20,24 @@
 
 {#if selectedEstimations.length}
 	<div class="btns" transition:slide>
-		<button
-			class="btn red"
-			onclick={async () => {
-				if (confirm('Do you really want to delete them!\nThis action is irreversible.')) {
-					await delMany(selectedEstimations);
-					document.location = '/';
-				}
-			}}
-		>
-			<i class="fa-solid fa-trash"></i>
-			<span>Delete</span>
-		</button>
+		<Modal basic small>
+			<Content class="p-8">
+				<p>Do you really want to delete them! This action is irreversible.</p>
+				<button
+					class="btn red"
+					onclick={async () => {
+						await delMany(selectedEstimations);
+						document.location = '/';
+					}}>Continue</button
+				>
+			</Content>
+			<Trigger>
+				<button class="btn red">
+					<i class="fa-solid fa-trash"></i>
+					<span>Delete</span>
+				</button>
+			</Trigger>
+		</Modal>
 		<button class="btn">
 			<a href="/multiple?estimations={selectedEstimations.join(',')}">
 				<i class="fa-solid fa-external-link"></i>
