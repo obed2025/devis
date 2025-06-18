@@ -48,6 +48,8 @@
 				<td>{currency((expenses_.qty || 1) * (expenses_.unitCost || 0), currentCurrency)} </td>
 			</tr>
 		{/each}
+	</tbody>
+	<tfoot>
 		{#if extraExpenses?.length || estimationStore.extraExpenses?.length}
 			<tr>
 				<td colspan="2">Sub Total</td>
@@ -64,7 +66,7 @@
 			<th colspan="2">TOTAL</th>
 			<th colspan="4">{currency(grandTotal, currentCurrency)}</th>
 		</tr>
-	</tbody>
+	</tfoot>
 </table>
 
 <style>
@@ -87,6 +89,12 @@
 
 		td {
 			border: none;
+		}
+	}
+
+	@media print {
+		tfoot {
+			display: table-row-group;
 		}
 	}
 </style>
