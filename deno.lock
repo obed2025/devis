@@ -9,6 +9,7 @@
     "npm:@sveltejs/kit@^2.16.0": "2.21.4_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_svelte@5.33.19__acorn@8.15.0_vite@6.3.5__picomatch@4.0.2_acorn@8.15.0",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.1.0_svelte@5.33.19__acorn@8.15.0_vite@6.3.5__picomatch@4.0.2",
     "npm:@vercel/analytics@^1.5.0": "1.5.0_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.33.19____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_svelte@5.33.19__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_vite@6.3.5__picomatch@4.0.2",
+    "npm:@vercel/speed-insights@^1.2.0": "1.2.0_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.33.19____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_svelte@5.33.19__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_vite@6.3.5__picomatch@4.0.2",
     "npm:currency-codes@^2.2.0": "2.2.0",
     "npm:eslint-config-prettier@^10.0.1": "10.1.5_eslint@9.28.0",
     "npm:eslint-plugin-svelte@3": "3.9.2_eslint@9.28.0_svelte@5.33.19__acorn@8.15.0_postcss@8.5.4",
@@ -567,6 +568,18 @@
         "@sveltejs/kit",
         "svelte@5.33.19_acorn@8.15.0"
       ]
+    },
+    "@vercel/speed-insights@1.2.0_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.33.19____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_svelte@5.33.19__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.33.19___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_vite@6.3.5__picomatch@4.0.2": {
+      "integrity": "sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==",
+      "dependencies": [
+        "@sveltejs/kit",
+        "svelte@5.33.19_acorn@8.15.0"
+      ],
+      "optionalPeers": [
+        "@sveltejs/kit",
+        "svelte@5.33.19_acorn@8.15.0"
+      ],
+      "scripts": true
     },
     "acorn-jsx@5.3.2_acorn@8.15.0": {
       "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==",
@@ -1437,6 +1450,7 @@
         "npm:@sveltejs/kit@^2.16.0",
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:@vercel/analytics@^1.5.0",
+        "npm:@vercel/speed-insights@^1.2.0",
         "npm:currency-codes@^2.2.0",
         "npm:eslint-config-prettier@^10.0.1",
         "npm:eslint-plugin-svelte@3",
