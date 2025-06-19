@@ -54,7 +54,8 @@
 		<img src={cartEmpty} alt="Empty Box" />
 		<p>
 			You have no estimations yet. <br />
-			Read more <a href="/about">about</a> this project or, <a href="/new">create</a> a new estimation.
+			Read more <a href="/about">about</a> this project or,
+			<a href="/new" data-sveltekit-preload-data="tap">create</a> a new estimation.
 		</p>
 	</div>
 {:else}
