@@ -29,7 +29,7 @@
 
 {#snippet ListItem({ href, text, icon }: Link)}
 	<li>
-		<a {href}>
+		<a {href} data-sveltekit-preload-data={href === '/new' ? 'tap' : 'hover'}>
 			<i class="fa-solid fa-{icon}"></i>
 			<span>{text}</span>
 		</a>
