@@ -8,7 +8,7 @@
 	import EditExtraExpenses from '$lib/components/EditExtraExpenses.svelte';
 
 	const { id } = page.params;
-	const codes = data
+	const codes_all = data
 		.map((val) => ({
 			code: val.code,
 			currency: val.currency,
@@ -28,6 +28,16 @@
 
 		goto('../' + id);
 	}
+
+	let currencySearchInput = $state('');
+	let codes = $derived(
+		codes_all.filter((val) => {
+			const lowerInput = currencySearchInput.toLowerCase();
+			const lowerCurrency = val.currency.toLowerCase();
+
+			return lowerCurrency.includes(lowerInput);
+		})
+	);
 </script>
 
 <svelte:head>
@@ -41,16 +51,23 @@
 	</button>
 </div>
 
+<i>Title</i>
 <h1 bind:innerText={estimationStore.title} contenteditable></h1>
+<i>Scope of work</i>
 <h2 bind:innerText={estimationStore.scopeOfWork} contenteditable></h2>
 
+<i>note</i>
 <p bind:innerText={estimationStore.note} contenteditable></p>
 
-<select name="currency" id="currency" bind:value={estimationStore.currency}>
-	{#each codes as { code, currency }}
-		<option value={code}>{currency} - {code}</option>
-	{/each}
-</select>
+<i>currency</i> <br />
+<div class="select-currency">
+	<input type="text" placeholder="search" bind:value={currencySearchInput} />
+	<select name="currency" id="currency" bind:value={estimationStore.currency}>
+		{#each codes as { code, currency }, i}
+			<option value={code} selected={i === 0}>{currency} - {code}</option>
+		{/each}
+	</select>
+</div>
 
 <EditExpenses></EditExpenses>
 <EditExtraExpenses></EditExtraExpenses>
@@ -68,5 +85,19 @@
 		padding: 0.3rem;
 		width: fit-content;
 		max-width: 100%;
+	}
+
+	i + p {
+		margin-top: 0;
+	}
+
+	.select-currency {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+
+		select:empty {
+			display: none;
+		}
 	}
 </style>

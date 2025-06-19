@@ -57,9 +57,9 @@ input {
 button {
 	cursor: pointer;
 	width: fit-content;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 0.75rem;
 	font-weight: 500;
-	font-size: 1.25rem;
+	font-size: 1.15rem;
 	transition: opacity 0.5s ease-in-out;
 
 	&:hover {
@@ -147,4 +147,8 @@ button {
 	tbody {
 		height: 100%;
 	}
+}
+
+.p-8 {
+	padding: 8px;
 }

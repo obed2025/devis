@@ -4,6 +4,7 @@
 	import type { Estimation } from '$lib/types';
 	import { slide } from 'svelte/transition';
 	import { delMany } from 'idb-keyval';
+	import { Modal, Content, Trigger } from 'sv-popup';
 
 	const { data }: PageProps = $props();
 	let selected: boolean[] = $state([]);
@@ -19,18 +20,24 @@
 
 {#if selectedEstimations.length}
 	<div class="btns" transition:slide>
-		<button
-			class="btn red"
-			onclick={async () => {
-				if (confirm('Do you really want to delete them!\nThis action is irreversible.')) {
-					await delMany(selectedEstimations);
-					document.location = '/';
-				}
-			}}
-		>
-			<i class="fa-solid fa-trash"></i>
-			<span>Delete</span>
-		</button>
+		<Modal basic small>
+			<Content class="p-8">
+				<p>Do you really want to delete them! This action is irreversible.</p>
+				<button
+					class="btn red"
+					onclick={async () => {
+						await delMany(selectedEstimations);
+						document.location = '/';
+					}}>Continue</button
+				>
+			</Content>
+			<Trigger>
+				<button class="btn red">
+					<i class="fa-solid fa-trash"></i>
+					<span>Delete</span>
+				</button>
+			</Trigger>
+		</Modal>
 		<button class="btn">
 			<a href="/multiple?estimations={selectedEstimations.join(',')}">
 				<i class="fa-solid fa-external-link"></i>
@@ -45,7 +52,11 @@
 {:else if !data.estimations?.length}
 	<div class="empty">
 		<img src={cartEmpty} alt="Empty Box" />
-		<p>You have no estimations yet.</p>
+		<p>
+			You have no estimations yet. <br />
+			Read more <a href="/about">about</a> this project or,
+			<a href="/new" data-sveltekit-preload-data="tap">create</a> a new estimation.
+		</p>
 	</div>
 {:else}
 	<label for="select-all">
@@ -63,8 +74,9 @@
 			{@const data = estimation[1] as Estimation}
 			<div>
 				<input type="checkbox" bind:checked={selected[i]} />
-				<h2><a href="/{estimation[0]}">{data.title}</a></h2>
+				<h2><a href="/{estimation[0]}">{data.title || 'Untitled'}</a></h2>
 				<h3>{data.scopeOfWork}</h3>
+				<span>{new Date(estimation[0] as number).toLocaleDateString()}</span>
 			</div>
 		{/each}
 	</div>

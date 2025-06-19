@@ -17,6 +17,7 @@
     "npm:idb-keyval@^6.2.2": "6.2.2",
     "npm:prettier-plugin-svelte@^3.3.3": "3.4.0_prettier@3.5.3_svelte@5.33.19__acorn@8.15.0",
     "npm:prettier@^3.4.2": "3.5.3",
+    "npm:sv-popup@~0.5.3": "0.5.3",
     "npm:svelte-check@4": "4.2.1_svelte@5.33.19__acorn@8.15.0_typescript@5.8.3",
     "npm:svelte@5": "5.33.19_acorn@8.15.0",
     "npm:typescript-eslint@^8.20.0": "8.34.0_eslint@9.28.0_typescript@5.8.3_@typescript-eslint+parser@8.34.0__eslint@9.28.0__typescript@5.8.3",
@@ -417,7 +418,7 @@
         "sade",
         "set-cookie-parser",
         "sirv",
-        "svelte",
+        "svelte@5.33.19_acorn@8.15.0",
         "vite",
         "vitefu"
       ],
@@ -428,7 +429,7 @@
       "dependencies": [
         "@sveltejs/vite-plugin-svelte",
         "debug",
-        "svelte",
+        "svelte@5.33.19_acorn@8.15.0",
         "vite"
       ]
     },
@@ -440,7 +441,7 @@
         "deepmerge",
         "kleur",
         "magic-string",
-        "svelte",
+        "svelte@5.33.19_acorn@8.15.0",
         "vite",
         "vitefu"
       ]
@@ -560,11 +561,11 @@
       "integrity": "sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==",
       "dependencies": [
         "@sveltejs/kit",
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ],
       "optionalPeers": [
         "@sveltejs/kit",
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ]
     },
     "acorn-jsx@5.3.2_acorn@8.15.0": {
@@ -746,11 +747,11 @@
         "postcss-load-config",
         "postcss-safe-parser",
         "semver",
-        "svelte",
+        "svelte@5.33.19_acorn@8.15.0",
         "svelte-eslint-parser"
       ],
       "optionalPeers": [
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ]
     },
     "eslint-scope@8.4.0": {
@@ -1163,7 +1164,7 @@
       "integrity": "sha512-pn1ra/0mPObzqoIQn/vUTR3ZZI6UuZ0sHqMK5x2jMLGrs53h0sXhkVuDcrlssHwIMk7FYrMjHBPoUSyyEEDlBQ==",
       "dependencies": [
         "prettier",
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ]
     },
     "prettier@3.5.3": {
@@ -1263,6 +1264,12 @@
         "has-flag"
       ]
     },
+    "sv-popup@0.5.3": {
+      "integrity": "sha512-i7sXWRDiubPrfmYIohqRYUcVFcoG1TaUNkzF4YfIShO5QXuPS3GU2i6xt4jGBuzjTAAjcv03hEelwRLgA1orqw==",
+      "dependencies": [
+        "svelte@3.59.2"
+      ]
+    },
     "svelte-check@4.2.1_svelte@5.33.19__acorn@8.15.0_typescript@5.8.3": {
       "integrity": "sha512-e49SU1RStvQhoipkQ/aonDhHnG3qxHSBtNfBRb9pxVXoa+N7qybAo32KgA9wEb2PCYFNaDg7bZCdhLD1vHpdYA==",
       "dependencies": [
@@ -1271,7 +1278,7 @@
         "fdir",
         "picocolors",
         "sade",
-        "svelte",
+        "svelte@5.33.19_acorn@8.15.0",
         "typescript"
       ],
       "bin": true
@@ -1285,11 +1292,14 @@
         "postcss",
         "postcss-scss",
         "postcss-selector-parser",
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ],
       "optionalPeers": [
-        "svelte"
+        "svelte@5.33.19_acorn@8.15.0"
       ]
+    },
+    "svelte@3.59.2": {
+      "integrity": "sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA=="
     },
     "svelte@5.33.19_acorn@8.15.0": {
       "integrity": "sha512-udmgc1nnGeAgnfVJjOMfSOAqPAKv8N65MWN2kDuxo6BZthTaUcsLh4vP8bdZC0bMXLGn69smSZXgQOeuZBOn4Q==",
@@ -1435,6 +1445,7 @@
         "npm:idb-keyval@^6.2.2",
         "npm:prettier-plugin-svelte@^3.3.3",
         "npm:prettier@^3.4.2",
+        "npm:sv-popup@~0.5.3",
         "npm:svelte-check@4",
         "npm:svelte@5",
         "npm:typescript-eslint@^8.20.0",
