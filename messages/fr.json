@@ -1,3 +1,7 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "new": "Créer une nouvelle devis.",
+  "copyright": "Copyright © {year} par {name}",
+  "all-rights-reserved": "Tous droits réservés",
+  "language": "Langues"
 }

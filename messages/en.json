@@ -1,3 +1,7 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "new": "Create a new estimate.",
+  "copyright": "Copyright © {year} by {name}",
+  "all-rights-reserved": "All rights reserved",
+  "language": "Languages"
 }

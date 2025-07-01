@@ -1,6 +1,8 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@fontsource-variable/inter@^5.2.6": "5.2.6",
+    "npm:@fortawesome/fontawesome-free@^6.7.2": "6.7.2",
     "npm:@inlang/paraglide-js@2": "2.1.0",
     "npm:@picocss/pico@^2.1.1": "2.1.1",
     "npm:@sveltejs/adapter-auto@6": "6.0.1_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.34.7____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_svelte@5.34.7__acorn@8.15.0_vite@6.3.5__picomatch@4.0.2_sass@1.89.2",
@@ -165,6 +167,12 @@
       "integrity": "sha512-TXv6YnJ8ZMVdX+SXWVBo/0p8LTcrUYngpWjvm91TMjjBQii7Oz11Lw5lbDV5Y0TzuhSJHwiH4hEtC1I42mMS0g==",
       "os": ["win32"],
       "cpu": ["x64"]
+    },
+    "@fontsource-variable/inter@5.2.6": {
+      "integrity": "sha512-jks/bficUPQ9nn7GvXvHtlQIPudW7Wx8CrlZoY8bhxgeobNxlQan8DclUJuYF2loYRrGpfrhCIZZspXYysiVGg=="
+    },
+    "@fortawesome/fontawesome-free@6.7.2": {
+      "integrity": "sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA=="
     },
     "@inlang/paraglide-js@2.1.0": {
       "integrity": "sha512-hpj5AglQphR91IH2qXPRp78fTkRVdhlNl09rZZBTtB18fcmJpCScDFckUEaR0UhOARySd4SiH/7/GbVenFcrbQ==",
@@ -1157,6 +1165,8 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@fontsource-variable/inter@^5.2.6",
+        "npm:@fortawesome/fontawesome-free@^6.7.2",
         "npm:@inlang/paraglide-js@2",
         "npm:@picocss/pico@^2.1.1",
         "npm:@sveltejs/adapter-auto@6",
