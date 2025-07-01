@@ -33,6 +33,8 @@
   nav {
     position: sticky;
     top: 0;
+    background-color: rgb(from var(--pico-background-color) r g b / 0.75);
+    backdrop-filter: blur(5px);
   }
 
   h1 {
