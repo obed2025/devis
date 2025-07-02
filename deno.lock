@@ -10,6 +10,8 @@
     "npm:@sveltejs/vite-plugin-svelte@5": "5.1.0_svelte@5.34.7__acorn@8.15.0_vite@6.3.5__picomatch@4.0.2_sass@1.89.2",
     "npm:@vercel/analytics@^1.5.0": "1.5.0_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.34.7____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_svelte@5.34.7__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_vite@6.3.5__picomatch@4.0.2_sass@1.89.2",
     "npm:@vercel/speed-insights@^1.2.0": "1.2.0_@sveltejs+kit@2.21.4__@sveltejs+vite-plugin-svelte@5.1.0___svelte@5.34.7____acorn@8.15.0___vite@6.3.5____picomatch@4.0.2__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2__acorn@8.15.0_svelte@5.34.7__acorn@8.15.0_@sveltejs+vite-plugin-svelte@5.1.0__svelte@5.34.7___acorn@8.15.0__vite@6.3.5___picomatch@4.0.2_vite@6.3.5__picomatch@4.0.2_sass@1.89.2",
+    "npm:currency-codes@^2.2.0": "2.2.0",
+    "npm:idb-keyval@^6.2.2": "6.2.2",
     "npm:sass@^1.89.2": "1.89.2",
     "npm:svelte-check@4": "4.2.1_svelte@5.34.7__acorn@8.15.0_typescript@5.8.3",
     "npm:svelte@5": "5.34.7_acorn@8.15.0",
@@ -734,6 +736,13 @@
     "core-util-is@1.0.3": {
       "integrity": "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="
     },
+    "currency-codes@2.2.0": {
+      "integrity": "sha512-vpbQc5sEYHGdTVAYUhHnKv0DWiYLRvzl/KKyqeHzBh7HD/j3UlWoScpZ9tN/jG6w2feddWoObsBbaNVu5yDapg==",
+      "dependencies": [
+        "first-match",
+        "nub"
+      ]
+    },
     "debug@4.4.1": {
       "integrity": "sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==",
       "dependencies": [
@@ -813,6 +822,9 @@
         "to-regex-range"
       ]
     },
+    "first-match@0.0.1": {
+      "integrity": "sha512-VvKbnaxrC0polTFDC+teKPTdl2mn6B/KUW+WB3C9RzKDeNwbzfLdnUz3FxC+tnjvus6bI0jWrWicQyVIPdS37A=="
+    },
     "fsevents@2.3.3": {
       "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
       "os": ["darwin"],
@@ -824,6 +836,9 @@
     "human-id@4.1.1": {
       "integrity": "sha512-3gKm/gCSUipeLsRYZbbdA1BD83lBoWUkZ7G9VFrhWPAU76KwYo5KR8V28bpoPm/ygy0x5/GCbpRQdY7VLYCoIg==",
       "bin": true
+    },
+    "idb-keyval@6.2.2": {
+      "integrity": "sha512-yjD9nARJ/jb1g+CvD0tlhUHOrJ9Sy0P8T9MF3YaLlHnSRpwPfpTX0XIvpmw3gAJUmEu3FiICLBDPXVwyEvrleg=="
     },
     "immutable@5.1.3": {
       "integrity": "sha512-+chQdDfvscSF1SJqv2gn4SRO2ZyS3xL3r7IW/wWEEzrzLisnOlKiQu5ytC/BVNcS15C39WT2Hg/bjKjDMcu+zg=="
@@ -940,6 +955,9 @@
     },
     "node-addon-api@7.1.1": {
       "integrity": "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="
+    },
+    "nub@0.0.0": {
+      "integrity": "sha512-dK0Ss9C34R/vV0FfYJXuqDAqHlaW9fvWVufq9MmGF2umCuDbd5GRfRD9fpi/LiM0l4ZXf8IBB+RYmZExqCrf0w=="
     },
     "picocolors@1.1.1": {
       "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
@@ -1174,6 +1192,8 @@
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:@vercel/analytics@^1.5.0",
         "npm:@vercel/speed-insights@^1.2.0",
+        "npm:currency-codes@^2.2.0",
+        "npm:idb-keyval@^6.2.2",
         "npm:sass@^1.89.2",
         "npm:svelte-check@4",
         "npm:svelte@5",
