@@ -3,8 +3,8 @@
   import "@fortawesome/fontawesome-free/css/all.css";
   import "@fontsource-variable/inter";
 
-  import Nav from "./components/Nav.svelte";
-  import Footer from "./components/Footer.svelte";
+  import Nav from "$lib/components/Nav.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 
   let { children } = $props();
 </script>

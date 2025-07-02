@@ -13,7 +13,7 @@
   </ul>
   <ul>
     <li>
-      <a href="/new" role="button" aria-labelledby="span">
+      <a href="/new/estimate" role="button" aria-labelledby="span">
         <i class="fa-solid fa-plus-circle"></i>
         <span id="span">{m.new()}</span>
       </a>
