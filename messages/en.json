@@ -6,5 +6,7 @@
   "language": "Languages",
   "title": "Title",
   "scope-of-work": "Scope of work",
-  "continue": "Continue"
+  "continue": "Continue",
+  "empty-db": "Looks like you haven't generated any estimates. Why not",
+  "add-a-new-project": "add a new project?"
 }

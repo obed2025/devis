@@ -6,5 +6,7 @@
   "language": "Indimi",
   "title": "Umutwe",
   "scope-of-work": "urwego rw'imirimo",
-  "continue": "Komeza"
+  "continue": "Komeza",
+  "empty-db": "Birasa n'aho nta kigereranyo ufite. Kuki se utakora",
+  "add-a-new-project": "umushinga mushya ?"
 }

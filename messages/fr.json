@@ -6,5 +6,7 @@
   "language": "Langues",
   "title": "Titre",
   "scope-of-work": "Étendue des travaux",
-  "continue": "Continuer"
+  "continue": "Continuer",
+  "empty-db": "Il semble que vous n'ayez généré aucun devis. Pourquoi ne pas",
+  "add-a-new-project": "ajouter un nouveau projet ?"
 }
