@@ -3,5 +3,8 @@
   "new": "Create a new estimate",
   "copyright": "Copyright © {year} by {name}",
   "all-rights-reserved": "All rights reserved",
-  "language": "Languages"
+  "language": "Languages",
+  "title": "Title",
+  "scope-of-work": "Scope of work",
+  "continue": "Continue"
 }

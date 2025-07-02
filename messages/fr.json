@@ -3,5 +3,8 @@
   "new": "Créer une nouvelle devis",
   "copyright": "Copyright © {year} par {name}",
   "all-rights-reserved": "Tous droits réservés",
-  "language": "Langues"
+  "language": "Langues",
+  "title": "Titre",
+  "scope-of-work": "Étendue des travaux",
+  "continue": "Continuer"
 }
