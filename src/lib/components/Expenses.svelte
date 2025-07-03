@@ -52,17 +52,20 @@
 	<tfoot>
 		{#if extraExpenses?.length || estimationStore.extraExpenses?.length}
 			<tr>
+				<td></td>
 				<td colspan="2">Sub Total</td>
 				<td colspan="4">{currency(total, currentCurrency)}</td>
 			</tr>
 		{/if}
 		{#each extraExpenses || estimationStore.extraExpenses || [] as expense}
 			<tr>
+				<td></td>
 				<td colspan="2">{expense.desc}</td>
 				<td colspan="4">{currency(expense.amount || 0, currentCurrency)}</td>
 			</tr>
 		{/each}
 		<tr>
+			<td></td>
 			<th colspan="2">TOTAL</th>
 			<th colspan="4">{currency(grandTotal, currentCurrency)}</th>
 		</tr>
