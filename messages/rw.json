@@ -21,5 +21,9 @@
   "note": "Icyitonderwa",
   "amount": "Igiciro",
   "save": "Bika",
-  "delete-confirmation-message": "Ese koko urashaka gusiba iki kigereranyo? Iki gikorwa ntabwo bishoboka ko wagisubiza inyuma."
+  "delete-confirmation-message": "Ese koko urashaka gusiba iki kigereranyo? Iki gikorwa ntabwo bishoboka ko wagisubiza inyuma.",
+  "table": {
+    "sub-total": "Igiteranyo gito",
+    "grand-total": "Igiteranyo gikuru"
+  }
 }

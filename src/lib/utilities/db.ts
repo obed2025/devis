@@ -1,5 +1,6 @@
 import { del, entries, get, set } from "idb-keyval";
 import type { Estimate } from "./types";
+import { codes } from "currency-codes";
 
 export async function createEstimate(estimate: Estimate) {
   const id = Date.now();
@@ -20,3 +21,14 @@ export async function getEstimate(id: number): Promise<Estimate | undefined> {
 
 export const updateEstimate = async (id: number, estimate: Estimate) =>
   await set(id, estimate);
+
+export function format(n: number, currency?: string) {
+  if (!codes().includes(currency ?? "")) {
+    currency = "RWF";
+  }
+
+  return n.toLocaleString(undefined, {
+    style: "currency",
+    currency: currency || "RWF",
+  });
+}

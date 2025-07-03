@@ -11,5 +11,9 @@
 <style>
   footer {
     text-align: center;
+
+    @media print {
+      display: none;
+    }
   }
 </style>

@@ -59,4 +59,10 @@
       font-size: 1.25rem;
     }
   }
+
+  @media print {
+    nav {
+      display: none;
+    }
+  }
 </style>

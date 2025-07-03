@@ -21,5 +21,9 @@
   "note": "Note",
   "amount": "Montante",
   "save": "Sauvegarder",
-  "delete-confirmation-message": "Êtes-vous sûr de vouloir supprimer ce devis? Cette action est irréversible."
+  "delete-confirmation-message": "Êtes-vous sûr de vouloir supprimer ce devis? Cette action est irréversible.",
+  "table": {
+    "sub-total": "Sous-total",
+    "grand-total": "Total"
+  }
 }

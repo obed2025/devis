@@ -9,6 +9,10 @@
 
   const { data } = $props();
   const estimate = data.estimate;
+
+  if (estimate) {
+    globalEstimate.data = estimate;
+  }
 </script>
 
 {#if estimate === null}

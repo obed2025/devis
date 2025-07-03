@@ -14,3 +14,12 @@
   {@render children()}
 </main>
 <Footer></Footer>
+
+<style>
+  @media print {
+    main {
+      padding: 0;
+      margin: 0;
+    }
+  }
+</style>

@@ -21,5 +21,9 @@
   "note": "Note",
   "amount": "Amount",
   "save": "Save",
-  "delete-confirmation-message": "Are you sure you want to delete this estimate? This action cannot be undone."
+  "delete-confirmation-message": "Are you sure you want to delete this estimate? This action cannot be undone.",
+  "table": {
+    "sub-total": "Sub Total",
+    "grand-total": "Grand Total"
+  }
 }
