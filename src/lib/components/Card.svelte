@@ -72,8 +72,6 @@
 {/snippet}
 
 <style lang="scss">
-  @use "@picocss/pico/scss/colors" as *;
-
   article {
     display: flex;
     flex-direction: column;
@@ -100,16 +98,6 @@
   footer {
     font-style: italic;
     align-items: center;
-
-    button {
-      color: #{$red-500};
-      border-color: #{$red-500};
-
-      &:focus-visible,
-      &:focus {
-        box-shadow: 0 0 8px #{$red-600};
-      }
-    }
   }
 
   footer,

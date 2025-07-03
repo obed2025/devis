@@ -8,5 +8,17 @@
   "scope-of-work": "urwego rw'imirimo",
   "continue": "Komeza",
   "empty-db": "Birasa n'aho nta kigereranyo ufite. Kuki se utakora",
-  "add-a-new-project": "umushinga mushya ?"
+  "add-a-new-project": "umushinga mushya?",
+  "invalid-id": "Indangakigereranyo ntabwo yujuje ibyangombwa",
+  "primary": "Icyiciro cya mbere",
+  "secondary": "Icyiciro cya kabiri",
+  "expense": {
+    "desc": "Ubusobanuro",
+    "unit": "Igipimo",
+    "qty": "Ingano",
+    "unit-cost": "Igiciro ku kintu kimwe"
+  },
+  "note": "Icyitonderwa",
+  "amount": "Igiciro",
+  "save": "Bika"
 }

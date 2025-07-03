@@ -1,4 +1,4 @@
-import { del, entries, set } from "idb-keyval";
+import { del, entries, get, set } from "idb-keyval";
 import type { Estimate } from "./types";
 
 export async function createEstimate(estimate: Estimate) {
@@ -13,3 +13,10 @@ export const getAllEstimates = async (): Promise<[number, Estimate][]> => {
 };
 
 export const deleteEstimate = async (id: number) => await del(id);
+
+export async function getEstimate(id: number): Promise<Estimate | undefined> {
+  return (await get(id)) as Estimate | undefined;
+}
+
+export const updateEstimate = async (id: number, estimate: Estimate) =>
+  await set(id, estimate);

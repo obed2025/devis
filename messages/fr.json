@@ -8,5 +8,17 @@
   "scope-of-work": "Étendue des travaux",
   "continue": "Continuer",
   "empty-db": "Il semble que vous n'ayez généré aucun devis. Pourquoi ne pas",
-  "add-a-new-project": "ajouter un nouveau projet ?"
+  "add-a-new-project": "ajouter un nouveau projet?",
+  "invalid-id": "L'identifiant n'est pas valide",
+  "primary": "Primaire",
+  "secondary": "Secondaire",
+  "expense": {
+    "desc": "Description",
+    "unit": "Unité",
+    "qty": "Quantité",
+    "unit-cost": "Coût unitaire"
+  },
+  "note": "Note",
+  "amount": "Montante",
+  "save": "Sauvegarder"
 }

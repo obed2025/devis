@@ -1,6 +1,8 @@
 @use "@picocss/pico/scss/pico" with (
   $theme-color: "lime"
 );
+@use "@picocss/pico/scss/colors" as *;
+@forward "./form";
 
 body {
   font-family: "Inter Variable", sans-serif;
@@ -22,4 +24,14 @@ main:has(.center) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button.red {
+  color: #{$red-500};
+  border-color: #{$red-500};
+
+  &:focus-visible,
+  &:focus {
+    box-shadow: 0 0 8px #{$red-600};
+  }
 }

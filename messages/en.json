@@ -8,5 +8,17 @@
   "scope-of-work": "Scope of work",
   "continue": "Continue",
   "empty-db": "Looks like you haven't generated any estimates. Why not",
-  "add-a-new-project": "add a new project?"
+  "add-a-new-project": "add a new project?",
+  "invalid-id": "The ID is not valid",
+  "primary": "Primary",
+  "secondary": "Secondary",
+  "expense": {
+    "desc": "Description",
+    "unit": "Unit",
+    "qty": "Quantity",
+    "unit-cost": "Unit Cost"
+  },
+  "note": "Note",
+  "amount": "Amount",
+  "save": "Save"
 }
