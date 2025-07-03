@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { m } from "$lib/paraglide/messages";
   import { getLocale } from "$lib/paraglide/runtime";
   import { RW_MONTH_NAMES } from "$lib/utilities/consts";
   import { deleteEstimate } from "$lib/utilities/db";
@@ -34,8 +35,10 @@
   }
 
   function ondelete() {
-    deleteEstimate(id);
-    deleted = true;
+    if (confirm(m["delete-confirmation-message"]())) {
+      deleteEstimate(id);
+      deleted = true;
+    }
   }
 </script>
 

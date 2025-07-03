@@ -20,5 +20,6 @@
   },
   "note": "Note",
   "amount": "Montante",
-  "save": "Sauvegarder"
+  "save": "Sauvegarder",
+  "delete-confirmation-message": "Êtes-vous sûr de vouloir supprimer ce devis? Cette action est irréversible."
 }

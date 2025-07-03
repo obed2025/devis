@@ -20,5 +20,6 @@
   },
   "note": "Note",
   "amount": "Amount",
-  "save": "Save"
+  "save": "Save",
+  "delete-confirmation-message": "Are you sure you want to delete this estimate? This action cannot be undone."
 }

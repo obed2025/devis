@@ -20,5 +20,6 @@
   },
   "note": "Icyitonderwa",
   "amount": "Igiciro",
-  "save": "Bika"
+  "save": "Bika",
+  "delete-confirmation-message": "Ese koko urashaka gusiba iki kigereranyo? Iki gikorwa ntabwo bishoboka ko wagisubiza inyuma."
 }
