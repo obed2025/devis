@@ -85,10 +85,16 @@
 	}
 
 	tr:has([colspan]) {
-		text-align: end;
+		& > *:last-child {
+			text-align: end;
+		}
 
 		td {
 			border: none;
+		}
+
+		th {
+			text-align: inherit;
 		}
 	}
 
@@ -96,5 +102,9 @@
 		tfoot {
 			display: table-row-group;
 		}
+	}
+
+	tfoot {
+		border: 1px solid black;
 	}
 </style>
