@@ -25,5 +25,7 @@
   "table": {
     "sub-total": "Sous-total",
     "grand-total": "Total"
-  }
+  },
+  "edit": "Modifier",
+  "delete": "Supprimer"
 }

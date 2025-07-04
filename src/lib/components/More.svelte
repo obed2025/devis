@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { m } from "$lib/paraglide/messages";
   import { slide } from "svelte/transition";
 
   const { id, ondelete }: { id: number; ondelete: Function } = $props();
@@ -16,13 +17,13 @@
       <li>
         <a href="/edit/estimate/{id}" aria-label="Edit">
           <i class="fa-solid fa-pen"></i>
-          Edit
+          {m.edit()}
         </a>
       </li>
       <li>
         <a href="/" aria-label="Delete" onclick={() => ondelete()}>
           <i class="fa-solid fa-trash"></i>
-          Delete
+          {m.delete()}
         </a>
       </li>
     </ul>

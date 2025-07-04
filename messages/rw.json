@@ -25,5 +25,7 @@
   "table": {
     "sub-total": "Igiteranyo gito",
     "grand-total": "Igiteranyo gikuru"
-  }
+  },
+  "edit": "Hindura",
+  "delete": "Siba"
 }
