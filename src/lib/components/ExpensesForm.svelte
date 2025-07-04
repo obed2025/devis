@@ -4,7 +4,7 @@
   import { fade } from "svelte/transition";
 </script>
 
-<div class="form">
+<div class="form flex">
   {#each globalEstimate.expenses as expense, i}
     <fieldset transition:fade>
       <input

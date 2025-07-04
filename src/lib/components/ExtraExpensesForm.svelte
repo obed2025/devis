@@ -4,7 +4,7 @@
   import { fade } from "svelte/transition";
 </script>
 
-<div class="form">
+<div class="form grid">
   {#each globalEstimate.extraExpenses as extraExpense, i}
     <fieldset transition:fade>
       <input
