@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import { m } from "$lib/paraglide/messages";
   import { getLocale } from "$lib/paraglide/runtime";
   import { RW_MONTH_NAMES } from "$lib/utilities/consts";
   import { deleteEstimate } from "$lib/utilities/db";
   import { fade } from "svelte/transition";
+  import More from "./More.svelte";
 
   interface Props {
     title: string;
@@ -43,74 +43,71 @@
 </script>
 
 {#if !deleted}
-  <article transition:fade>
-    {@render Header()}
-    <p class="limited-lines">
-      {scopeOfWork}
-    </p>
-    {@render Footer()}
-  </article>
+  <div transition:fade class="card">
+    <div class="title">
+      <input type="checkbox" />
+      <a href="/open/estimate/{id}" class="limited-lines"
+        >{title || m.title()}</a
+      >
+      <More {id} {ondelete}></More>
+    </div>
+    <div class="scope-of-work limited-lines">
+      {scopeOfWork || m["scope-of-work"]()}
+    </div>
+    <small class="date">{date}</small>
+  </div>
 {/if}
 
-{#snippet Header()}
-  <header>
-    <a href="/open/estimate/{id}" class="limited-lines">{title}</a>
-    <button
-      class="contrast outline"
-      aria-label="Edit"
-      onclick={() => goto(`/edit/estimate/${id}`)}
-    >
-      <i class="fa-solid fa-pen"></i>
-    </button>
-  </header>
-{/snippet}
+<style>
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--pico-h1-color);
 
-{#snippet Footer()}
-  <footer>
-    <span>{date}</span>
-    <button class="contrast outline red" aria-label="Edit" onclick={ondelete}>
-      <i class="fa-solid fa-trash"></i>
-    </button>
-  </footer>
-{/snippet}
+    font-size: 1.2rem;
+    --limit: 1;
+    max-width: 100%;
+  }
 
-<style lang="scss">
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .date {
+    font-weight: 180;
+  }
 
-    p {
-      flex-grow: 1;
+  .card {
+    padding: 0.5rem;
+    border: 1.35px solid var(--pico-color);
+    border-radius: 0.25rem;
+    display: grid;
+    gap: 0.25rem;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .title {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      width: fit-content;
     }
+
+    input {
+      margin: 0;
+    }
+  }
+
+  .scope-of-work {
+    font-size: 1rem;
+    font-weight: 300;
   }
 
   .limited-lines {
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--limit, 2);
     line-clamp: var(--limit, 2);
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  footer {
-    font-style: italic;
-    align-items: center;
-  }
-
-  footer,
-  header {
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: 1fr auto;
-  }
-
-  header {
-    font-weight: 600;
   }
 </style>
