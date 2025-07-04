@@ -68,7 +68,7 @@
 
     li {
       list-style: none;
-      padding: 0.25rem 0.5rem;
+      padding: 1rem;
 
       &:hover {
         background-color: var(--pico-muted-border-color);
