@@ -1,6 +1,10 @@
 <script>
   import LanguageSwitcher from "./LangS.svelte";
   import { m } from "$lib/paraglide/messages";
+  import { selectedEstimates } from "$lib/utilities/states.svelte";
+  import { blur } from "svelte/transition";
+
+  const ids = $derived(selectedEstimates.ids);
 </script>
 
 <nav class="container-fluid">
@@ -12,10 +16,23 @@
     </li>
   </ul>
   <ul>
+    {#if ids.length > 1}
+      <li transition:blur>
+        <a
+          href="/open/group?estimates={ids}"
+          role="button"
+          onclick={() => selectedEstimates.clear()}
+          target="_blank"
+        >
+          <i class="fa-solid fa-external-link"></i>
+          <span>{m.open()}</span>
+        </a>
+      </li>
+    {/if}
     <li>
-      <a href="/new/estimate" role="button" aria-labelledby="span">
+      <a href="/new/estimate" role="button">
         <i class="fa-solid fa-plus-circle"></i>
-        <span id="span">{m.new()}</span>
+        <span>{m.new()}</span>
       </a>
     </li>
     <li>
@@ -51,7 +68,7 @@
     }
   }
 
-  @media (width < 28rem) {
+  @media (width < 41.25rem) {
     a span {
       display: none;
     }

@@ -15,13 +15,13 @@
   {#if isOpen}
     <ul transition:slide>
       <li>
-        <a href="/edit/estimate/{id}" aria-label="Edit">
+        <a href="/edit/estimate/{id}">
           <i class="fa-solid fa-pen"></i>
           {m.edit()}
         </a>
       </li>
       <li>
-        <a href="/" aria-label="Delete" onclick={() => ondelete()}>
+        <a href="/" class="delete" onclick={() => ondelete()}>
           <i class="fa-solid fa-trash"></i>
           {m.delete()}
         </a>
@@ -30,7 +30,9 @@
   {/if}
 </div>
 
-<style>
+<style lang="scss">
+  @use "@picocss/pico/scss/colors" as *;
+
   a {
     text-decoration: none;
   }
@@ -65,6 +67,7 @@
     padding: 0;
     border: 1px solid var(--color);
     border-radius: 2px;
+    z-index: 45;
 
     li {
       list-style: none;
@@ -89,5 +92,9 @@
   ul,
   li {
     margin: 0;
+  }
+
+  .delete {
+    color: #{$red-500};
   }
 </style>

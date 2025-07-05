@@ -5,14 +5,16 @@
   import { deleteEstimate } from "$lib/utilities/db";
   import { fade } from "svelte/transition";
   import More from "./More.svelte";
+  import { selectedEstimates } from "$lib/utilities/states.svelte";
 
   interface Props {
     title: string;
     scopeOfWork: string;
     id: number;
+    single?: boolean;
   }
 
-  const { id, scopeOfWork, title }: Props = $props();
+  const { id, scopeOfWork, title, single }: Props = $props();
   let deleted = $state(false);
 
   const date = (() => {
@@ -45,7 +47,17 @@
 {#if !deleted}
   <div transition:fade class="card">
     <div class="title">
-      <input type="checkbox" />
+      {#if !single}
+        <input
+          type="checkbox"
+          bind:checked={
+            () => selectedEstimates.ids.includes(id),
+            (v) => {
+              selectedEstimates[v ? "add" : "remove"](id);
+            }
+          }
+        />
+      {/if}
       <a href="/open/estimate/{id}" class="limited-lines"
         >{title || m.title()}</a
       >

@@ -27,5 +27,7 @@
     "grand-total": "Igiteranyo gikuru"
   },
   "edit": "Hindura",
-  "delete": "Siba"
+  "delete": "Siba",
+  "open": "Fungura",
+  "select-all": "Hitamo Byose"
 }

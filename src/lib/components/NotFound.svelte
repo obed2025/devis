@@ -1,10 +1,10 @@
 <script lang="ts">
-  const { children } = $props();
+  const { children }: { children?: any } = $props();
 </script>
 
 <section class="center">
   <span class="big shrug-emoji">🤷‍♂️</span>
-  {@render children()}
+  {@render children?.()}
 </section>
 
 <style>

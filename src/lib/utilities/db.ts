@@ -1,4 +1,4 @@
-import { del, entries, get, set } from "idb-keyval";
+import { del, entries, get, getMany, set } from "idb-keyval";
 import type { Estimate } from "./types";
 import { codes } from "currency-codes";
 
@@ -49,4 +49,16 @@ export function format(n: number, currency?: string) {
     style: "currency",
     currency: currency || "RWF",
   });
+}
+
+export async function getManyEstimates(
+  ids: number[]
+): Promise<[number, Estimate][]> {
+  const estimates = await getMany(ids);
+  return ids
+    .map((id, idx) => {
+      const estimate = estimates[idx] as Estimate | null;
+      return estimate ? ([id, estimate] as [number, Estimate]) : null;
+    })
+    .filter((entry): entry is [number, Estimate] => entry !== null);
 }

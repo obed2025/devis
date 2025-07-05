@@ -4,7 +4,11 @@
   import NotFound from "$lib/components/NotFound.svelte";
   import { m } from "$lib/paraglide/messages";
   import { getAllEstimates } from "$lib/utilities/db";
+  import { selectedEstimates } from "$lib/utilities/states.svelte";
   import type { Estimate } from "$lib/utilities/types";
+  import { slide } from "svelte/transition";
+
+  const ids = $derived(selectedEstimates.ids);
 </script>
 
 {#await getAllEstimates()}
@@ -18,6 +22,22 @@
       </p>
     </NotFound>
   {:else}
+    {#if ids.length}
+      <label transition:slide>
+        <input
+          type="checkbox"
+          bind:checked={
+            () => ids.length === estimates.length,
+            (value) => {
+              value
+                ? selectedEstimates.addMany(estimates.map((val) => val[0]))
+                : selectedEstimates.clear();
+            }
+          }
+        />
+        {m["select-all"]()}
+      </label>
+    {/if}
     <div>
       {@render Estimates(estimates)}
     </div>
@@ -28,7 +48,7 @@
   {#each estimates as [id, estimate]}
     {@const { title, scopeOfWork } = estimate}
 
-    <Card {title} {scopeOfWork} {id}></Card>
+    <Card {title} {scopeOfWork} {id} single={estimates.length === 1}></Card>
   {/each}
 {/snippet}
 
@@ -50,5 +70,9 @@
 
   p {
     text-align: center;
+  }
+
+  label {
+    padding: 0.5rem;
   }
 </style>

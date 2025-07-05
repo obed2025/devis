@@ -29,3 +29,27 @@ export const globalEstimate = new (class {
     };
   }
 })();
+
+export const selectedEstimates = new (class {
+  #ids: number[] = $state([]);
+
+  add(id: number) {
+    this.#ids = [...new Set([...this.#ids, id])];
+  }
+
+  addMany(ids: number[]) {
+    this.#ids = [...new Set([...this.#ids, ...ids])];
+  }
+
+  remove(id: number) {
+    this.#ids = this.#ids.filter((existingId) => existingId !== id);
+  }
+
+  clear() {
+    this.#ids = [];
+  }
+
+  get ids() {
+    return this.#ids;
+  }
+})();

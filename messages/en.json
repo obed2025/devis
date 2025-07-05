@@ -27,5 +27,7 @@
     "grand-total": "Grand Total"
   },
   "edit": "Edit",
-  "delete": "Delete"
+  "delete": "Delete",
+  "open": "Open",
+  "select-all": "Select All"
 }
