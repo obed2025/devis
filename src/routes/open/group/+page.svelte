@@ -22,7 +22,7 @@
 
   <div class="grp">
     {#each estimates as [id, estimate]}
-      <div class="item overflow-auto">
+      <div>
         <PreviewEstimate {estimate} {id} group></PreviewEstimate>
       </div>
     {/each}
