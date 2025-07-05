@@ -15,6 +15,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>{globalEstimate.title}</title>
+</svelte:head>
+
 {#if estimate === null}
   <Loading></Loading>
 {:else}

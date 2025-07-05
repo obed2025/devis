@@ -29,5 +29,6 @@
   "edit": "Modifier",
   "delete": "Supprimer",
   "open": "Ouvrir",
-  "select-all": "Tout sélectionner"
+  "select-all": "Tout sélectionner",
+  "show-title": "Afficher le titre"
 }

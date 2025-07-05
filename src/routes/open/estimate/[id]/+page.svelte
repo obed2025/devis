@@ -6,6 +6,10 @@
   const { estimate, id } = data;
 </script>
 
+<svelte:head>
+  <title>{estimate?.title}</title>
+</svelte:head>
+
 {#if !estimate}
   <Loading></Loading>
 {:else}

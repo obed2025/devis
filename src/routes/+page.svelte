@@ -11,6 +11,10 @@
   const ids = $derived(selectedEstimates.ids);
 </script>
 
+<svelte:head>
+  <title>Devis</title>
+</svelte:head>
+
 {#await getAllEstimates()}
   <Loading></Loading>
 {:then estimates}

@@ -5,9 +5,12 @@
 
   import Nav from "$lib/components/Nav.svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import OpenGraph from "$lib/components/OpenGraph.svelte";
 
   let { children } = $props();
 </script>
+
+<OpenGraph></OpenGraph>
 
 <Nav></Nav>
 <main class="container">

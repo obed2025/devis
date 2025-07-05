@@ -14,6 +14,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
+
 <form {onsubmit}>
   <label for="title">{m.title()}</label>
   <input
