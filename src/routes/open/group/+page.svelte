@@ -20,13 +20,11 @@
     <i class="fa-solid fa-print"></i>
   </button>
 
-  <div class="grp">
-    {#each estimates as [id, estimate]}
-      <div>
-        <PreviewEstimate {estimate} {id} group></PreviewEstimate>
-      </div>
-    {/each}
-  </div>
+  {#each estimates as [id, estimate]}
+    <div class="estimate">
+      <PreviewEstimate {estimate} {id} group></PreviewEstimate>
+    </div>
+  {/each}
 {/if}
 
 <style>
@@ -36,9 +34,8 @@
     font-weight: 700;
   }
 
-  .grp {
-    display: grid;
-    gap: 2rem;
+  .estimate:not(:last-child) {
+    margin-bottom: 3rem;
   }
 
   button {
