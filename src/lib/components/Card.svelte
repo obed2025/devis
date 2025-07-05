@@ -24,6 +24,9 @@
           month: "long",
           day: "2-digit",
           year: "numeric",
+          hour: "2-digit",
+          hour12: false,
+          minute: "2-digit",
         })
       : getRwLocaleDateString(date_);
   })();
@@ -33,7 +36,15 @@
     const month = RW_MONTH_NAMES[date.getMonth()];
     const year = date.getFullYear();
 
-    return `${day} ${month} ${year}`;
+    return (
+      `${day} ${month} ${year}` +
+      " Saa " +
+      date.toLocaleTimeString(undefined, {
+        hour: "2-digit",
+        hour12: false,
+        minute: "2-digit",
+      })
+    );
   }
 
   function ondelete() {

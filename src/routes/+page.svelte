@@ -43,7 +43,7 @@
       </label>
     {/if}
     <div>
-      {@render Estimates(estimates)}
+      {@render Estimates([...estimates].reverse())}
     </div>
   {/if}
 {/await}
