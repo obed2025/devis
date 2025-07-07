@@ -6,6 +6,7 @@
   import Nav from "$lib/components/Nav.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import OpenGraph from "$lib/components/OpenGraph.svelte";
+  import ScrollToTop from "$lib/components/ScrollToTop.svelte";
 
   let { children } = $props();
 </script>
@@ -17,6 +18,8 @@
   {@render children()}
 </main>
 <Footer></Footer>
+
+<ScrollToTop></ScrollToTop>
 
 <style>
   @media print {

@@ -4,6 +4,10 @@
 @use "@picocss/pico/scss/colors" as *;
 @forward "./form";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter Variable", sans-serif;
   min-height: 100dvh;
