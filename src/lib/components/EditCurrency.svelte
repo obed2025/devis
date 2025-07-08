@@ -39,5 +39,11 @@
     max-height: 50vh;
     overflow: auto;
     margin-block: 0.5rem;
+    display: none;
+  }
+
+  input:focus + div,
+  div:hover {
+    display: block;
   }
 </style>
