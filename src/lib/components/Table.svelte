@@ -38,7 +38,7 @@
       </tr>
     {/each}
 
-    {#if extraExpenses?.length}
+    {#if extraExpenses?.length && subTotal}
       <tr>
         <th scope="row"></th>
         <td colspan="4">{m["table.sub-total"]()}</td>
