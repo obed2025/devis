@@ -47,9 +47,9 @@
     );
   }
 
-  function ondelete() {
+  async function ondelete() {
     if (confirm(m["delete-confirmation-message"]())) {
-      deleteEstimate(id);
+      await deleteEstimate(id);
       deleted = true;
     }
   }

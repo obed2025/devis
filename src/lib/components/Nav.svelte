@@ -3,8 +3,10 @@
   import { m } from "$lib/paraglide/messages";
   import { selectedEstimates } from "$lib/utilities/states.svelte";
   import { blur } from "svelte/transition";
+  import Account from "./Account.svelte";
 
   const ids = $derived(selectedEstimates.ids);
+  const { userImage, userName } = $props();
 </script>
 
 <nav class="container-fluid">
@@ -29,6 +31,7 @@
         </a>
       </li>
     {/if}
+    <Account {userName} {userImage}></Account>
     <li>
       <a href="/new/estimate" role="button">
         <i class="fa-solid fa-plus-circle"></i>

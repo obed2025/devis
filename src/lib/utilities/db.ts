@@ -1,4 +1,4 @@
-import { del, entries, get, getMany, set } from "idb-keyval";
+import { del, entries, get, getMany, set, setMany } from "idb-keyval";
 import type { Estimate } from "./types";
 import { codes } from "currency-codes";
 
@@ -31,7 +31,16 @@ export const getAllEstimates = async (): Promise<[number, Estimate][]> => {
   return (await entries()) as [number, Estimate][];
 };
 
-export const deleteEstimate = async (id: number) => await del(id);
+export const deleteEstimate = async (id: number) => {
+  let deletedEstimates = JSON.parse(
+    localStorage.getItem("deleted") ?? "[]"
+  ) as number[];
+  deletedEstimates.push(id);
+
+  localStorage.setItem("deleted", JSON.stringify(deletedEstimates));
+
+  await del(id);
+};
 
 export async function getEstimate(id: number): Promise<Estimate | undefined> {
   return (await get(id)) as Estimate | undefined;
