@@ -7,13 +7,21 @@
   import Footer from "$lib/components/Footer.svelte";
   import OpenGraph from "$lib/components/OpenGraph.svelte";
   import ScrollToTop from "$lib/components/ScrollToTop.svelte";
+  import { goto } from "$app/navigation";
+  import { browser } from "$app/environment";
 
-  let { children } = $props();
+  let { children, data } = $props();
+  const userImage = data.user?.image;
+  const userName = data.user?.name;
+
+  if (userName && browser) {
+    goto("/sync-changes");
+  }
 </script>
 
 <OpenGraph></OpenGraph>
 
-<Nav></Nav>
+<Nav {userImage} {userName}></Nav>
 <main class="container">
   {@render children()}
 </main>
