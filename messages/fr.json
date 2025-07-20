@@ -30,5 +30,11 @@
   "delete": "Supprimer",
   "open": "Ouvrir",
   "select-all": "Tout sélectionner",
-  "show-title": "Afficher le titre"
+  "show-title": "Afficher le titre",
+  "auth": {
+    "sign-in": "Se connecter",
+    "sign-out": "Se déconnecter",
+    "continue-with": "Continuer avec",
+    "sync-changes": "Synchroniser les modifications"
+  }
 }

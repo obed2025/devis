@@ -30,5 +30,11 @@
   "delete": "Siba",
   "open": "Fungura",
   "select-all": "Hitamo Byose",
-  "show-title": "Erekana umutwe"
+  "show-title": "Erekana umutwe",
+  "auth": {
+    "sign-in": "Injira",
+    "sign-out": "Sohoka",
+    "continue-with": "Komeza na",
+    "sync-changes": "Huza n'igihe"
+  }
 }

@@ -30,5 +30,11 @@
   "delete": "Delete",
   "open": "Open",
   "select-all": "Select All",
-  "show-title": "Show title"
+  "show-title": "Show title",
+  "auth": {
+    "sign-in": "Sign In",
+    "sign-out": "Sign Out",
+    "continue-with": "Continue With",
+    "sync-changes": "Sync Changes"
+  }
 }

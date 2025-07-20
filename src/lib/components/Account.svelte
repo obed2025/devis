@@ -1,5 +1,6 @@
 <script lang="ts">
   import { signOut } from "$lib/auth-client";
+  import { m } from "$lib/paraglide/messages";
   import { clear } from "idb-keyval";
 
   const { userName, userImage } = $props();
@@ -14,7 +15,7 @@
   <li>
     <a href="/sign-in" role="button" class="secondary outline">
       <i class="fa-solid fa-sign-in"></i>
-      <span>Sign in</span>
+      <span>{m["auth.sign-in"]()}</span>
     </a>
   </li>
 {:else}
@@ -35,13 +36,13 @@
           }}
         >
           <i class="fa-solid fa-sign-out"></i>
-          <span>Sign Out</span>
+          <span>{m["auth.sign-out"]()}</span>
         </a>
       </li>
       <li>
         <a href="/sync-changes" onclick={hideDropdown}>
           <i class="fa-solid fa-sync"></i>
-          <span>Sync Changes</span>
+          <span>{m["auth.sync-changes"]()}</span>
         </a>
       </li>
     </ul>

@@ -1,15 +1,20 @@
 <script lang="ts">
   import { signIn } from "$lib/auth-client";
+  import { m } from "$lib/paraglide/messages";
 </script>
 
+<svelte:head>
+  <title>{m["auth.sign-in"]()}</title>
+</svelte:head>
+
 <form>
-  <h1>Sign in</h1>
+  <h1>{m["auth.sign-in"]()}</h1>
 
   <hr />
 
   <button onclick={signIn} class="secondary outline">
     <img src="/icons8-google.svg" alt="" />
-    <span>Continue with Google</span>
+    <span>{m["auth.continue-with"]()} Google</span>
   </button>
 </form>
 
