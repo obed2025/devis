@@ -17,12 +17,16 @@
       },
     });
 
-    const updatedEstimates = await res.json();
+    if (!res.ok) {
+      goto("/sign-in");
+    } else {
+      const updatedEstimates = await res.json();
 
-    await setMany(updatedEstimates);
-    localStorage.removeItem("deleted");
+      await setMany(updatedEstimates);
+      localStorage.removeItem("deleted");
 
-    goto("/");
+      goto("/");
+    }
   });
 </script>
 

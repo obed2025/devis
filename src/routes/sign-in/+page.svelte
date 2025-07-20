@@ -8,8 +8,8 @@
   <hr />
 
   <button onclick={signIn} class="secondary outline">
-    <i class="fa-brands fa-google"></i>
-    Continue with Google
+    <img src="/icons8-google.svg" alt="" />
+    <span>Continue with Google</span>
   </button>
 </form>
 
@@ -22,9 +22,13 @@
     border-radius: 1rem;
   }
 
-  i {
-    color: var(--pico-primary);
-    font-weight: bold;
+  button {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 2.5rem;
     margin-right: 0.75rem;
   }
 </style>
