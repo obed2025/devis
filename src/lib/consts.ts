@@ -1,1 +1,1 @@
-export const PUBLIC_URLS = ['/demo/better-auth/sign-in'];
+export const AUTH_URL = '/auth';

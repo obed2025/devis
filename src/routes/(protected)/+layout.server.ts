@@ -1,13 +1,12 @@
 import { redirect } from '@sveltejs/kit';
-import { PUBLIC_URLS } from '$lib/consts.js';
+import { AUTH_URL } from '$lib/consts';
 
 export const load = ({ locals, url }) => {
   const { user, session } = locals;
-
   const { pathname } = url;
 
-  if (!user && !session && !PUBLIC_URLS.includes(pathname)) {
-    return redirect(307, PUBLIC_URLS[0] + `?redirect=${pathname}`);
+  if (!user && !session && pathname !== AUTH_URL) {
+    return redirect(307, `${AUTH_URL}?redirect=${pathname}`);
   }
 
   return { user, session };

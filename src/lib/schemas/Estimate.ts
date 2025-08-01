@@ -2,6 +2,8 @@ import { model, Schema } from 'mongoose';
 
 const estimateSchema = new Schema({
   userID: String,
+  collaborators: [String],
+  isPublic: { type: Boolean, default: false },
   title: String,
   scopeOfWork: String,
   expenses: [

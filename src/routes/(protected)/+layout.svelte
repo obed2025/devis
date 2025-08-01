@@ -1,18 +1,19 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { PUBLIC_URLS } from '$lib/consts';
+  import { AUTH_URL } from '$lib/consts';
   import { authClient } from '$lib/utils/auth-client';
   const session = authClient.useSession();
+  const { pathname } = page.url;
 
   $effect(() => {
     if (
       !$session.data &&
       !$session.isPending &&
       !$session.isRefetching &&
-      !PUBLIC_URLS.includes(page.url.pathname)
+      pathname !== AUTH_URL
     ) {
-      goto(PUBLIC_URLS[0]);
+      goto(`${AUTH_URL}?redirect=${pathname}`);
     }
   });
 

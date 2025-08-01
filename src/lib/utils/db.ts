@@ -10,7 +10,3 @@ export const getEstimates = async (id: string) => {
 
   return JSON.parse(JSON.stringify(estimates));
 };
-
-// ⚠️⚠️⚠️ Remember to add types later
-export const createEstimate = async (estimate: any) =>
-  await Estimates.create(estimate);
