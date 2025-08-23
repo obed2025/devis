@@ -1,21 +1,22 @@
-import type { Estimate, Expense, ExtraExpense } from "./types";
+import type { ObjectId } from 'mongodb';
+import type { Estimate, Expense, ExtraExpense } from './types';
 
 export const globalEstimate = new (class {
-  title: string = $state("");
-  scopeOfWork: string = $state("");
+  title: string = $state('');
+  scopeOfWork: string = $state('');
   expenses: Expense[] = $state([]);
 
-  currency: string = $state("");
+  currency: string = $state('');
   extraExpenses: ExtraExpense[] = $state([]);
-  note: string = $state("");
+  note: string = $state('');
 
   set data(estimate: Estimate) {
     this.title = estimate.title;
     this.scopeOfWork = estimate.scopeOfWork;
     this.expenses = estimate.expenses;
-    this.currency = estimate?.currency ?? "";
+    this.currency = estimate?.currency ?? '';
     this.extraExpenses = estimate?.extraExpenses ?? [];
-    this.note = estimate?.note ?? "";
+    this.note = estimate?.note ?? '';
   }
 
   get data() {
@@ -31,17 +32,17 @@ export const globalEstimate = new (class {
 })();
 
 export const selectedEstimates = new (class {
-  #ids: number[] = $state([]);
+  #ids: ObjectId[] = $state([]);
 
-  add(id: number) {
+  add(id: ObjectId) {
     this.#ids = [...new Set([...this.#ids, id])];
   }
 
-  addMany(ids: number[]) {
+  addMany(ids: ObjectId[]) {
     this.#ids = [...new Set([...this.#ids, ...ids])];
   }
 
-  remove(id: number) {
+  remove(id: ObjectId) {
     this.#ids = this.#ids.filter((existingId) => existingId !== id);
   }
 
