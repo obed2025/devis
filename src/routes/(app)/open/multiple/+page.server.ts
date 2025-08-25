@@ -17,5 +17,7 @@ export const load = async ({ locals, url }) => {
     estimatesIDs?.includes(String(value._id))
   );
 
+  if (!estimates.length) error(404, 'Not Found');
+
   return { estimates: JSON.parse(JSON.stringify(estimates)) };
 };

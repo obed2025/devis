@@ -49,6 +49,10 @@
   nav {
     display: flex;
     justify-content: space-between;
+
+    @media print {
+      display: none;
+    }
   }
 
   ul:nth-child(2) {
