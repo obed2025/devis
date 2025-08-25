@@ -34,7 +34,8 @@
   "auth": {
     "sign-in": "Injira",
     "sign-out": "Sohoka",
-    "continue-with": "Komeza na"
+    "continue-with": "Komeza na",
+    "sign-out-from-all-devices": "Sohoka mubikoresho byose"
   },
   "open": "Fungura",
   "delete": "Siba"

@@ -34,7 +34,8 @@
   "auth": {
     "sign-in": "Sign In",
     "sign-out": "Sign Out",
-    "continue-with": "Continue With"
+    "continue-with": "Continue With",
+    "sign-out-from-all-devices": "Sign out from all devices"
   },
   "open": "Open",
   "delete": "Delete"

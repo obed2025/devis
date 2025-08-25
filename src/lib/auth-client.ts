@@ -1,4 +1,5 @@
 import { createAuthClient } from 'better-auth/client';
+import { deleteAllSessions } from './db.remote';
 
 export const authClient = createAuthClient();
 
@@ -10,3 +11,5 @@ export const signIn = async (callbackURL?: string) => {
 };
 
 export const signOut = async () => await authClient.signOut();
+
+export const signOutAllDevices = async () => await deleteAllSessions();

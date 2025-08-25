@@ -5,6 +5,16 @@ import * as v from 'valibot';
 import { ObjectId } from 'mongodb';
 import type { Estimate } from './utilities/types';
 
+export const deleteAllSessions = command(async () => {
+  const { locals } = getRequestEvent();
+
+  if (!locals.user) error(401, 'Un Authorized');
+
+  const userId = new ObjectId(locals.user.id);
+
+  await db.collection('session').deleteMany({ userId });
+});
+
 export const deleteMany = command(v.array(v.string()), async (ids) =>
   ids.forEach(async (id) => await deleteEstimate(id))
 );
