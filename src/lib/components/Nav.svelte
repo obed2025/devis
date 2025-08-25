@@ -1,89 +1,87 @@
-<script>
-  import LanguageSwitcher from "./LangS.svelte";
-  import { m } from "$lib/paraglide/messages";
-  import { selectedEstimates } from "$lib/utilities/states.svelte";
-  import { blur } from "svelte/transition";
-  import Account from "./Account.svelte";
+<script lang="ts">
+  import LanguageSwitcher from './LangS.svelte';
+  import { m } from '$lib/paraglide/messages';
+  import Avatar from './Avatar.svelte';
+  import type { AvatarProps } from './Avatar.svelte';
 
-  const ids = $derived(selectedEstimates.ids);
-  const { userImage, userName } = $props();
+  const { userImage }: AvatarProps = $props();
 </script>
 
 <nav class="container-fluid">
   <ul>
     <li>
       <h1>
-        <a href="/" translate="no">Devis</a>
+        <a href="/" translate="no" class="logo">Devis</a>
       </h1>
     </li>
   </ul>
+
   <ul>
-    {#if ids.length > 1}
-      <li transition:blur>
-        <a
-          href="/open/group?estimates={ids}"
-          role="button"
-          onclick={() => selectedEstimates.clear()}
-          target="_blank"
-        >
-          <i class="fa-solid fa-external-link"></i>
-          <span>{m.open()}</span>
-        </a>
-      </li>
-    {/if}
-    <Account {userName} {userImage}></Account>
     <li>
-      <a href="/new/estimate" role="button">
+      <a href="/new" role="button">
         <i class="fa-solid fa-plus-circle"></i>
         <span>{m.new()}</span>
       </a>
     </li>
+    <LanguageSwitcher></LanguageSwitcher>
     <li>
-      <LanguageSwitcher></LanguageSwitcher>
+      <a href="/account">
+        <Avatar {userImage}></Avatar>
+      </a>
     </li>
   </ul>
 </nav>
 
 <style>
   @font-face {
-    font-family: "great-vibes";
-    src: url("/GreatVibes-Regular.ttf");
+    font-family: 'Vibes';
+    src: url('/GreatVibes-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  a.logo {
+    text-decoration-line: none;
+    font-family: 'Vibes';
+    color: inherit;
   }
 
   nav {
-    position: sticky;
-    top: 0;
-    background-color: rgb(from var(--pico-background-color) r g b / 0.75);
-    backdrop-filter: blur(5px);
-    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+
+    @media print {
+      display: none;
+    }
   }
 
-  h1 {
-    --color: var(--pico-color);
+  ul:nth-child(2) {
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+    padding-top: 1rem;
 
-    a {
-      color: var(--color);
-      font-family: "great-vibes";
+    & * {
+      margin: 0;
+      padding: 0;
+    }
+  }
 
-      &:hover {
-        text-decoration: none;
+  a[role='button'] {
+    padding: 0.5rem 0.25rem;
+  }
+
+  @media (width < 33.75rem) {
+    span {
+      display: none;
+    }
+
+    a[role='button'] {
+      padding: 0.7rem;
+
+      i {
+        font-size: 1.5rem;
       }
-    }
-  }
-
-  @media (width < 41.25rem) {
-    a span {
-      display: none;
-    }
-
-    a:has(span) i {
-      font-size: 1.25rem;
-    }
-  }
-
-  @media print {
-    nav {
-      display: none;
     }
   }
 </style>

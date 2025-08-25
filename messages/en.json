@@ -9,7 +9,6 @@
   "continue": "Continue",
   "empty-db": "Looks like you haven't generated any estimates. Why not",
   "add-a-new-project": "add a new project?",
-  "invalid-id": "The ID is not valid",
   "primary": "Primary",
   "secondary": "Secondary",
   "expense": {
@@ -27,14 +26,15 @@
     "grand-total": "Grand Total"
   },
   "edit": "Edit",
-  "delete": "Delete",
-  "open": "Open",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
   "select-all": "Select All",
-  "show-title": "Show title",
   "auth": {
     "sign-in": "Sign In",
     "sign-out": "Sign Out",
     "continue-with": "Continue With",
-    "sync-changes": "Sync Changes"
-  }
+    "sign-out-from-all-devices": "Sign out from all devices"
+  },
+  "open": "Open",
+  "delete": "Delete"
 }

@@ -9,7 +9,6 @@
   "continue": "Komeza",
   "empty-db": "Birasa n'aho nta kigereranyo ufite. Kuki se utakora",
   "add-a-new-project": "umushinga mushya?",
-  "invalid-id": "Indangakigereranyo ntabwo yujuje ibyangombwa",
   "primary": "Icyiciro cya mbere",
   "secondary": "Icyiciro cya kabiri",
   "expense": {
@@ -27,14 +26,15 @@
     "grand-total": "Igiteranyo gikuru"
   },
   "edit": "Hindura",
-  "delete": "Siba",
-  "open": "Fungura",
+  "cancel": "Hagarika",
+  "confirm": "Emeza",
   "select-all": "Hitamo Byose",
-  "show-title": "Erekana umutwe",
   "auth": {
     "sign-in": "Injira",
     "sign-out": "Sohoka",
     "continue-with": "Komeza na",
-    "sync-changes": "Huza n'igihe"
-  }
+    "sign-out-from-all-devices": "Sohoka mubikoresho byose"
+  },
+  "open": "Fungura",
+  "delete": "Siba"
 }

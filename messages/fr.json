@@ -9,7 +9,6 @@
   "continue": "Continuer",
   "empty-db": "Il semble que vous n'ayez généré aucun devis. Pourquoi ne pas",
   "add-a-new-project": "ajouter un nouveau projet?",
-  "invalid-id": "L'identifiant n'est pas valide",
   "primary": "Primaire",
   "secondary": "Secondaire",
   "expense": {
@@ -27,14 +26,15 @@
     "grand-total": "Total"
   },
   "edit": "Modifier",
-  "delete": "Supprimer",
-  "open": "Ouvrir",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
   "select-all": "Tout sélectionner",
-  "show-title": "Afficher le titre",
   "auth": {
     "sign-in": "Se connecter",
     "sign-out": "Se déconnecter",
     "continue-with": "Continuer avec",
-    "sync-changes": "Synchroniser les modifications"
-  }
+    "sign-out-from-all-devices": "Déconnectez-vous de tous les appareils"
+  },
+  "open": "Ouvrir",
+  "delete": "Supprimer"
 }

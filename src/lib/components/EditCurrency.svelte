@@ -1,24 +1,33 @@
 <script lang="ts">
-  import { globalEstimate } from "$lib/utilities/states.svelte";
-  import { data } from "currency-codes";
+  import type { Estimate } from '$lib/utilities/types';
+  import { data } from 'currency-codes';
+
+  interface Props {
+    globalEstimate: {
+      data: Estimate;
+    };
+  }
+
+  const { globalEstimate }: Props = $props();
 
   data.sort((a, b) => a.currency.localeCompare(b.currency));
 
   const searchResults = $derived(
     data.filter((value) => {
-      const lowerCaseCurrency = globalEstimate.currency.toLocaleLowerCase();
+      const lowerCaseCurrency =
+        globalEstimate.data.currency?.toLocaleLowerCase();
       const lowerCaseCode = value.code.toLocaleLowerCase();
       const lowerCaseDataCurrency = value.currency.toLocaleLowerCase();
 
       return (
-        lowerCaseCode.includes(lowerCaseCurrency) ||
-        lowerCaseDataCurrency.includes(lowerCaseCurrency)
+        lowerCaseCode.includes(lowerCaseCurrency ?? '') ||
+        lowerCaseDataCurrency.includes(lowerCaseCurrency ?? '')
       );
     })
   );
 </script>
 
-<input type="search" bind:value={globalEstimate.currency} />
+<input type="search" bind:value={globalEstimate.data.currency} />
 
 <div>
   {#each searchResults as { currency, code }}
@@ -27,7 +36,7 @@
         type="radio"
         name="currency"
         value={code}
-        bind:group={globalEstimate.currency}
+        bind:group={globalEstimate.data.currency}
       />
       {currency} - {code}
     </label>

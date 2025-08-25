@@ -1,25 +1,33 @@
 <script lang="ts">
-  import { m } from "$lib/paraglide/messages";
-  import { globalEstimate } from "$lib/utilities/states.svelte";
-  import ExpensesForm from "./ExpensesForm.svelte";
+  import { m } from '$lib/paraglide/messages';
+  import type { Estimate } from '$lib/utilities/types';
+  import ExpensesForm from './ExpensesForm.svelte';
+
+  interface Props {
+    globalEstimate: {
+      data: Estimate;
+    };
+  }
 
   function addExpense() {
-    globalEstimate.expenses.push({
-      desc: "",
-      unit: "",
+    globalEstimate.data.expenses.push({
+      desc: '',
+      unit: '',
       qty: undefined,
       unitCost: undefined,
     });
   }
+
+  const { globalEstimate }: Props = $props();
 </script>
 
 <details name="edit-estimate" open>
   <summary>{m.primary()}</summary>
   <section spellcheck="false">
-    <h1 contenteditable bind:innerText={globalEstimate.title}></h1>
-    <h2 contenteditable bind:innerText={globalEstimate.scopeOfWork}></h2>
+    <h1 contenteditable bind:innerText={globalEstimate.data.title}></h1>
+    <h2 contenteditable bind:innerText={globalEstimate.data.scopeOfWork}></h2>
 
-    <ExpensesForm></ExpensesForm>
+    <ExpensesForm {globalEstimate}></ExpensesForm>
 
     <button
       class="secondary outline"

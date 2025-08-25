@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { m } from "$lib/paraglide/messages";
-  import { LANGUAGES } from "$lib/utilities/consts";
-  import LanguageSwitcherItem from "./LangS-Item.svelte";
+  import { m } from '$lib/paraglide/messages';
+  import { LANGUAGES } from '$lib/utilities/consts';
+  import LanguageSwitcherItem from './LangS-Item.svelte';
 </script>
 
 <details class="dropdown">
@@ -19,8 +19,12 @@
 
 <style>
   span {
-    @media (width < 30rem) {
+    @media (width < 33.75rem) {
       display: none;
     }
+  }
+
+  details {
+    margin: 0 !important;
   }
 </style>
