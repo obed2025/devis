@@ -2,10 +2,9 @@
   import { deleteEstimate } from '$lib/db.remote';
   import { m } from '$lib/paraglide/messages';
   import { selectedEstimates } from '$lib/utilities/states.svelte';
-  import type { ObjectId } from 'mongodb';
 
   interface CardProps {
-    _id: ObjectId;
+    _id: string;
     createdAt: Date;
     title: string;
     scopeOfWork?: string;

@@ -35,5 +35,7 @@
     "sign-in": "Sign In",
     "sign-out": "Sign Out",
     "continue-with": "Continue With"
-  }
+  },
+  "open": "Open",
+  "delete": "Delete"
 }

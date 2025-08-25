@@ -4,12 +4,13 @@
   import Table from './Table.svelte';
   import { m } from '$lib/paraglide/messages';
 
-  const { estimate, group }: { estimate: Estimate; group?: boolean } = $props();
+  const { estimate, multiple }: { estimate: Estimate; multiple?: boolean } =
+    $props();
   const { _id, title, scopeOfWork, expenses, extraExpenses, currency, note } =
     estimate;
 </script>
 
-{#if !group}
+{#if !multiple}
   <fieldset class="secondary">
     <button aria-label="Print" onclick={() => print()}>
       <i class="fa-solid fa-print"></i>

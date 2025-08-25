@@ -1,4 +1,3 @@
-import type { ObjectId } from 'mongodb';
 import type { Estimate } from './types';
 
 export const GlobalEstimate = class {
@@ -10,17 +9,17 @@ export const GlobalEstimate = class {
 };
 
 export const selectedEstimates = new (class {
-  #ids: ObjectId[] = $state([]);
+  #ids: string[] = $state([]);
 
-  add(id: ObjectId) {
+  add(id: string) {
     this.#ids = [...new Set([...this.#ids, id])];
   }
 
-  addMany(ids: ObjectId[]) {
+  addMany(ids: string[]) {
     this.#ids = [...new Set([...this.#ids, ...ids])];
   }
 
-  remove(id: ObjectId) {
+  remove(id: string) {
     this.#ids = this.#ids.filter((existingId) => existingId !== id);
   }
 

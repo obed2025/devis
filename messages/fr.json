@@ -35,5 +35,7 @@
     "sign-in": "Se connecter",
     "sign-out": "Se déconnecter",
     "continue-with": "Continuer avec"
-  }
+  },
+  "open": "Ouvrir",
+  "delete": "Supprimer"
 }

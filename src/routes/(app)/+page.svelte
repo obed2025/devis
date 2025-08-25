@@ -24,22 +24,35 @@
   </NotFound>
 {:else}
   {#if ids.length}
-    <label transition:slide>
-      <input
-        type="checkbox"
-        bind:checked={
-          () => ids.length === estimates.length,
-          (value) => {
-            value
-              ? selectedEstimates.addMany(estimates.map((val) => val._id))
-              : selectedEstimates.clear();
+    <div transition:slide class="bunner">
+      <label>
+        <input
+          type="checkbox"
+          bind:checked={
+            () => ids.length === estimates.length,
+            (value) => {
+              value
+                ? selectedEstimates.addMany(estimates.map((val) => val._id))
+                : selectedEstimates.clear();
+            }
           }
-        }
-      />
-      {m['select-all']()}
-    </label>
+        />
+        {m['select-all']()}
+      </label>
+
+      <a
+        href="/open/multiple?estimates={selectedEstimates.ids}"
+        role="button"
+        aria-label="Open All"
+        ><i class="fa-solid fa-external-link"></i> {m.open()}</a
+      >
+
+      <button class="delete"
+        ><i class="fa-solid fa-trash"></i> {m.delete()}</button
+      >
+    </div>
   {/if}
-  <div>
+  <div class="grid">
     {@render Estimates([...estimates].reverse())}
   </div>
 {/if}
@@ -50,8 +63,10 @@
   {/each}
 {/snippet}
 
-<style>
-  div {
+<style lang="scss">
+  @use '@picocss/pico/scss/colors' as *;
+
+  div.grid {
     display: grid;
     --min: 250px;
     grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
@@ -72,5 +87,24 @@
 
   label {
     padding: 0.5rem;
+  }
+
+  .bunner {
+    padding-block-end: 1rem;
+    display: flex;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    label {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .delete {
+    background-color: $red-500;
+    border-color: $red-500;
+    color: white;
   }
 </style>
