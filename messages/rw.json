@@ -9,7 +9,6 @@
   "continue": "Komeza",
   "empty-db": "Birasa n'aho nta kigereranyo ufite. Kuki se utakora",
   "add-a-new-project": "umushinga mushya?",
-  "invalid-id": "Indangakigereranyo ntabwo yujuje ibyangombwa",
   "primary": "Icyiciro cya mbere",
   "secondary": "Icyiciro cya kabiri",
   "expense": {
@@ -30,7 +29,6 @@
   "cancel": "Hagarika",
   "confirm": "Emeza",
   "select-all": "Hitamo Byose",
-  "show-title": "Erekana umutwe",
   "auth": {
     "sign-in": "Injira",
     "sign-out": "Sohoka",
