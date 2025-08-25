@@ -27,14 +27,13 @@
     "grand-total": "Total"
   },
   "edit": "Modifier",
-  "delete": "Supprimer",
-  "open": "Ouvrir",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
   "select-all": "Tout sélectionner",
   "show-title": "Afficher le titre",
   "auth": {
     "sign-in": "Se connecter",
     "sign-out": "Se déconnecter",
-    "continue-with": "Continuer avec",
-    "sync-changes": "Synchroniser les modifications"
+    "continue-with": "Continuer avec"
   }
 }

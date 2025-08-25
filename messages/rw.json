@@ -27,14 +27,13 @@
     "grand-total": "Igiteranyo gikuru"
   },
   "edit": "Hindura",
-  "delete": "Siba",
-  "open": "Fungura",
+  "cancel": "Hagarika",
+  "confirm": "Emeza",
   "select-all": "Hitamo Byose",
   "show-title": "Erekana umutwe",
   "auth": {
     "sign-in": "Injira",
     "sign-out": "Sohoka",
-    "continue-with": "Komeza na",
-    "sync-changes": "Huza n'igihe"
+    "continue-with": "Komeza na"
   }
 }

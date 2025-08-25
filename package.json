@@ -30,6 +30,7 @@
     "better-auth": "^1.2.12",
     "currency-codes": "^2.2.0",
     "mongodb": "^6.17.0",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "valibot": "^1.1.0"
   }
 }

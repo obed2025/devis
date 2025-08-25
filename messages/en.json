@@ -27,14 +27,13 @@
     "grand-total": "Grand Total"
   },
   "edit": "Edit",
-  "delete": "Delete",
-  "open": "Open",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
   "select-all": "Select All",
   "show-title": "Show title",
   "auth": {
     "sign-in": "Sign In",
     "sign-out": "Sign Out",
-    "continue-with": "Continue With",
-    "sync-changes": "Sync Changes"
+    "continue-with": "Continue With"
   }
 }
