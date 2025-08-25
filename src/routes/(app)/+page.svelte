@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from '$lib/components/Card.svelte';
   import NotFound from '$lib/components/NotFound.svelte';
+  import { deleteMany } from '$lib/db.remote.js';
   import { m } from '$lib/paraglide/messages';
   import { selectedEstimates } from '$lib/utilities/states.svelte';
   import type { Estimate } from '$lib/utilities/types';
@@ -9,6 +10,7 @@
   const ids = $derived(selectedEstimates.ids);
   const { data } = $props();
   const { estimates } = data;
+  let busy = $state(false);
 </script>
 
 <svelte:head>
@@ -47,8 +49,14 @@
         ><i class="fa-solid fa-external-link"></i> {m.open()}</a
       >
 
-      <button class="delete"
-        ><i class="fa-solid fa-trash"></i> {m.delete()}</button
+      <button
+        class="delete"
+        aria-busy={busy}
+        onclick={async () => {
+          busy = true;
+          await deleteMany(selectedEstimates.ids);
+          document.location = '/';
+        }}><i class="fa-solid fa-trash"></i> {m.delete()}</button
       >
     </div>
   {/if}

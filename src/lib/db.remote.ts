@@ -5,6 +5,10 @@ import * as v from 'valibot';
 import { ObjectId } from 'mongodb';
 import type { Estimate } from './utilities/types';
 
+export const deleteMany = command(v.array(v.string()), async (ids) =>
+  ids.forEach(async (id) => await deleteEstimate(id))
+);
+
 export const deleteEstimate = command(v.string(), async (id) => {
   const { locals } = getRequestEvent();
   const _id = new ObjectId(id);
