@@ -3,6 +3,7 @@
   import { signIn } from '$lib/auth-client';
   import { m } from '$lib/paraglide/messages';
   import google from '$lib/assets/icons8-google.svg';
+  import LangS from '$lib/components/LangS.svelte';
 
   const message = page.error?.message;
 </script>
@@ -13,19 +14,25 @@
 
 {#if message === 'Un Authorized'}
   <div class="sign-in">
-    <form>
-      <h1>{m['auth.sign-in']()}</h1>
+    <div>
+      <nav>
+        <LangS></LangS>
+      </nav>
 
-      <hr />
+      <form>
+        <h1>{m['auth.sign-in']()}</h1>
 
-      <button
-        onclick={() => signIn(page.url.pathname)}
-        class="secondary outline"
-      >
-        <img src={google} alt="" />
-        <span>{m['auth.continue-with']()} Google</span>
-      </button>
-    </form>
+        <hr />
+
+        <button
+          onclick={() => signIn(page.url.pathname)}
+          class="secondary outline"
+        >
+          <img src={google} alt="" />
+          <span>{m['auth.continue-with']()} Google</span>
+        </button>
+      </form>
+    </div>
   </div>
 {:else if message === 'Not Found'}
   <div class="not-found">
@@ -71,5 +78,14 @@
   img {
     width: 2.5rem;
     margin-right: 0.75rem;
+  }
+
+  div:has(nav) {
+    display: grid;
+  }
+
+  nav {
+    margin-bottom: 1rem;
+    justify-self: end;
   }
 </style>
