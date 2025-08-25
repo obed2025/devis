@@ -1,25 +1,21 @@
-import { browser } from "$app/environment";
-import { m } from "$lib/paraglide/messages.js";
-import { getEstimate } from "$lib/utilities/db";
-import { error } from "@sveltejs/kit";
+import { getRequestEvent } from '$app/server';
+import { db } from '$lib/db';
+import { error } from '@sveltejs/kit';
+import { ObjectId } from 'mongodb';
+import type { Estimate } from './types';
 
-export const loadEstimates = async (id: number) => {
-  if (isNaN(id)) {
-    error(403, m["invalid-id"]());
-  }
+export async function loadEstimate(id: string) {
+  const _id = new ObjectId(id);
+  const user_id = getRequestEvent().locals.user?.id;
 
-  return {
-    id,
-    estimate: browser
-      ? await (async () => {
-          const estimate = await getEstimate(id);
+  if (!user_id) error(401, 'Un Authorized');
 
-          if (estimate === undefined) {
-            error(404, "Estimate not found");
-          }
+  const userID = new ObjectId(user_id);
+  const estimate = JSON.parse(
+    JSON.stringify(await db.collection('estimates').findOne({ _id, userID }))
+  ) as Estimate | null;
 
-          return estimate;
-        })()
-      : null,
-  };
-};
+  if (!estimate) error(404, 'Not found');
+
+  return { estimate };
+}

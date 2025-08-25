@@ -1,5 +1,4 @@
 import type { Locale } from '$lib/paraglide/runtime';
-import type { ObjectId } from 'mongodb';
 
 export interface Language {
   locale: Locale;
@@ -19,7 +18,7 @@ export interface ExtraExpense {
 }
 
 export interface Estimate {
-  _id: ObjectId;
+  _id: string;
   title: string;
   scopeOfWork: string;
   expenses: Expense[];

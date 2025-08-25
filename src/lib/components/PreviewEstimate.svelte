@@ -1,15 +1,11 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-  import type { Estimate } from "$lib/utilities/types";
-  import Table from "./Table.svelte";
-  import { m } from "$lib/paraglide/messages";
+  import { goto } from '$app/navigation';
+  import type { Estimate } from '$lib/utilities/types';
+  import Table from './Table.svelte';
+  import { m } from '$lib/paraglide/messages';
 
-  const {
-    estimate,
-    id,
-    group,
-  }: { estimate: Estimate; id: number; group?: boolean } = $props();
-  const { title, scopeOfWork, expenses, extraExpenses, currency, note } =
+  const { estimate, group }: { estimate: Estimate; group?: boolean } = $props();
+  const { _id, title, scopeOfWork, expenses, extraExpenses, currency, note } =
     estimate;
 </script>
 
@@ -21,7 +17,7 @@
     <button
       aria-label="Edit"
       class="outline secondary"
-      onclick={() => goto(`/edit/estimate/${id}`)}
+      onclick={() => goto(`/edit/${_id}`)}
     >
       <i class="fa-solid fa-pen"></i>
     </button>

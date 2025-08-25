@@ -1,35 +1,13 @@
 import type { ObjectId } from 'mongodb';
-import type { Estimate, Expense, ExtraExpense } from './types';
+import type { Estimate } from './types';
 
-export const globalEstimate = new (class {
-  title: string = $state('');
-  scopeOfWork: string = $state('');
-  expenses: Expense[] = $state([]);
+export const GlobalEstimate = class {
+  data: Estimate;
 
-  currency: string = $state('');
-  extraExpenses: ExtraExpense[] = $state([]);
-  note: string = $state('');
-
-  set data(estimate: Estimate) {
-    this.title = estimate.title;
-    this.scopeOfWork = estimate.scopeOfWork;
-    this.expenses = estimate.expenses;
-    this.currency = estimate?.currency ?? '';
-    this.extraExpenses = estimate?.extraExpenses ?? [];
-    this.note = estimate?.note ?? '';
+  constructor(data: Estimate) {
+    this.data = $state(data);
   }
-
-  get data() {
-    return {
-      title: this.title,
-      scopeOfWork: this.scopeOfWork,
-      expenses: this.expenses,
-      currency: this.currency,
-      extraExpenses: this.extraExpenses,
-      note: this.note,
-    };
-  }
-})();
+};
 
 export const selectedEstimates = new (class {
   #ids: ObjectId[] = $state([]);
