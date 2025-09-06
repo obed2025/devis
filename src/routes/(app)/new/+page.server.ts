@@ -18,6 +18,6 @@ export const actions = {
       userID,
     });
 
-    redirect(303, '/open/' + newEstimate.insertedId);
+    redirect(303, '/edit/' + newEstimate.insertedId);
   },
 } satisfies Actions;
